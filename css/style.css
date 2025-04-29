@@ -1,2 +1,83 @@
+/* Navigation Styles */
+nav {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    padding: 20px;
+    /* border: 1px solid black; */
+}
 
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+    border: 1px solid black;
+    background-color: rgb(238, 189, 243);
+    padding: 10px;
+}
+
+/* Header Styles */
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Section Styles */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: aqua;
+}
+
+section h1 {
+    display: flex;
+    justify-content: left;
+}
+
+/* Article Styles */
+article {
+    background-color: antiquewhite;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #d6f3c2;
+    padding: 20px;
+}
+
+/* Canvas and SVG Styles */
+canvas, svg {
+    border: 1px solid black;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 200px;
+}
+
+/* SVG Circle Styles */
+circle {
+    fill: rgb(194, 228, 119);
+    stroke: red;
+    stroke-width: 2;
+}
+
+/* section {
+    background-color: #ffe6bc;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+} */
