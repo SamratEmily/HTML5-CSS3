@@ -14,14 +14,19 @@
             <li><a href="inputtype.html">Input Type</a></li>
             <li><a href="canvas.html">Canvas/SVG</a></li>
             <li><a href="audio.html">Audio/Video</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     
-    <audio src="sample-audio.mp3" controls></audio>
+    <h1>Audio with source</h1>
+    <audio controls autoplay="true" muted loop>
+        <source src="sample-audio.mp3" type="audio/mp3">
+        <source src="sample-audio.ogg" type="audio/ogg">
+    </audio>
 
-    <h1>Video</h1>
-    <video src="sample-video.mp4" controls></video>
+    <h1>Video with source</h1>
+    <video controls autoplay muted loop>
+        <source src="sample-video.mp4" type="video/mp4">
+        <source src="sample-video.webm" type="video/webm">
+    </video>
 </body>
 </html>

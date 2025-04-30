@@ -1,7 +1,6 @@
 /* Navigation Styles */
 nav {
     background-color: #f0f0f0;
-    padding: 20px;
 }
 
 nav ul {
@@ -9,8 +8,6 @@ nav ul {
     justify-content: center;
     gap: 20px;
     list-style-type: none;
-    padding: 20px;
-    /* border: 1px solid black; */
 }
 
 nav a {
