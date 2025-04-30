@@ -33,3 +33,24 @@ ctx.strokeStyle = 'blue';
 ctx.fillStyle = 'red';
 ctx.fill();
 ctx.stroke();
+
+$(document).ready(function() {
+    $('input[name="datefilter"]').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+    });
+
+    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        $('#start_date').val(picker.startDate.format('YYYY-MM-DD'));
+        $('#end_date').val(picker.endDate.format('YYYY-MM-DD'));
+    });
+
+    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+        $('#start_date').val('');
+        $('#end_date').val('');
+    });
+});

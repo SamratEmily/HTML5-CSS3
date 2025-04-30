@@ -61,8 +61,65 @@ canvas, svg {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 200px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form-group input[type="color"] {
+    width: 100px;
+    height: 40px;
+    padding: 0;
+    border: none;
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+}
+
+/* Error state for required fields */
+.form-group input:required:invalid {
+    border-color: #ff4444;
+}
+
+.form-group input:required:invalid:focus {
+    box-shadow: 0 0 5px rgba(255, 68, 68, 0.3);
 }
 
 /* SVG Circle Styles */
@@ -78,3 +135,108 @@ circle {
     display: flex;
     justify-content: center;
 } */
+
+.date-range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-range-container input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.date-range-container span {
+    color: #666;
+}
+
+/* Style for date and datetime inputs */
+input[type="date"],
+input[type="datetime-local"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Custom styling for the date picker */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+input[type="date"]:focus,
+input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+.date-range-picker {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    cursor: pointer;
+}
+
+.date-range-picker:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Override daterangepicker styles */
+.daterangepicker {
+    font-family: inherit;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.daterangepicker .calendar-table {
+    background-color: white;
+    border: none;
+}
+
+.daterangepicker td.active, 
+.daterangepicker td.active:hover {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.daterangepicker .calendar-table th, 
+.daterangepicker .calendar-table td {
+    font-size: 14px;
+    padding: 5px;
+}
+
+.daterangepicker .drp-buttons {
+    border-top: 1px solid #eee;
+    padding: 8px;
+}
+
+.daterangepicker .drp-buttons .btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.daterangepicker .drp-buttons .btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.daterangepicker .drp-buttons .btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}

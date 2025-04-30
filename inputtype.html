@@ -17,16 +17,63 @@
         </ul>
     </nav>
     <form action="inputtype.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="emai required">
-        DOB: <input type="date" name="date" id="date">
-        <input type="number" name="number" min="1" max="10" id="number">
-        <input type="color" name="color" id="color">
-        <input type="range" name="range" id="range">
-        <input type="month" name="month" id="month">
-        <input type="submit" value="Submit">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="datefilter">Date Range:</label>
+            <input type="text" id="datefilter" name="datefilter" class="date-range-picker">
+            <input type="hidden" name="start_date" id="start_date">
+            <input type="hidden" name="end_date" id="end_date">
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="form-group">
+            <label for="date-range">Date Range:</label>
+            <div class="date-range-container">
+                <input type="date" id="start-date" name="start-date" placeholder="Start Date">
+                <span>to</span>
+                <input type="date" id="end-date" name="end-date" placeholder="End Date">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="datetime">Date and Time:</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+        </div>
+        <div class="form-group">
+            <label for="datetime-range">Date and Time Range:</label>
+            <div class="date-range-container">
+                <input type="datetime-local" id="start-datetime" name="start-datetime" placeholder="Start Date & Time">
+                <span>to</span>
+                <input type="datetime-local" id="end-datetime" name="end-datetime" placeholder="End Date & Time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="number">Number (1-10):</label>
+            <input type="number" name="number" id="number" min="1" max="10">
+        </div>
+        <div class="form-group">
+            <label for="color">Color:</label>
+            <input type="color" name="color" id="color">
+        </div>
+        <div class="form-group">
+            <label for="range">Range:</label>
+            <input type="range" name="range" id="range">
+        </div>
+        <div class="form-group">
+            <label for="month">Month:</label>
+            <input type="month" name="month" id="month">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit">
+        </div>
     </form>
 
     <details>
@@ -37,5 +84,12 @@
     <progress value="66" max="100"></progress>
 
     <meter value="66" max="100"></meter>
+
+    <!-- Add jQuery and daterangepicker -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="js/script.js"></script>
 </body>
 </html>
