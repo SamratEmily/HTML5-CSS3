@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeLab Homepage</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #007CF5;
+            --text-dark: #1A1A1A;
+            --text-gray: #626368;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .welab-logo img {
+            height: 36px;
+            width: 36px;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-start-project {
+            background-color: var(--text-dark);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-start-project:hover {
+            background-color: #333;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .hero-heading {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-para {
+            color: var(--text-gray);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            max-width: 492px;
+            line-height: 1.6;
+        }
+
+        .talk-us-button {
+            width: 230px;
+            background-color: var(--primary-color);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .talk-us-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .talk-us-button a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Update Section */
+        .update-section {
+            padding: 3rem 0;
+            background-color: black;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 0 20px;
+        }
+
+        .update-item img {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .update-item p {
+            color: white;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .update-section {
+                padding: 2rem 0;
+            }
+            
+            .update-item {
+                justify-content: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .update-item:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 0;
+            background-color: #F8F9FA;
+        }
+
+        .about-section .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .about-content {
+            max-width: 66.666%;
+            padding-left: 5px;
+        }
+
+        .section-title {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: #8D8D8D;                   
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+            text-align: start;
+        }
+
+        .section-description {
+            font-size: 60px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            line-height: 1.2;
+        }
+
+        .section-description-2 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            line-height: 1.2;
+        }
+
+        .about-content {
+            max-width: 66.666%;
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            padding-right: 0;
+        }
+
+        .about-content-block {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 3rem;
+            padding-right: 5%;
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .about-section .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .about-content {
+                max-width: 100%;
+                padding-left: 0;
+            }
+
+            .about-content-block {
+                padding-left: 0;
+                padding-right: 0;
+                margin-top: 2rem;
+            }
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 0;
+            background-color: #F8F9FA;
+        }
+
+        .section-title-3 {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: #8D8D8D;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-description-3 {
+            font-size: 60px;
+            font-weight: 700;
+            /* width: 300px; */
+            align-items: center;
+            color: black;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .service-card {
+            border: 1px solid #C6C6C6;
+            background: white;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-heading {
+                font-size: 3rem;
+            }
+            
+            .hero-section {
+                text-align: center;
+            }
+
+            .hero-para {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-image {
+                margin-top: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/images/welab.svg" alt="WeLabs Logo" class="me-2">
+                WeLabs
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-start-project" href="#">Start a project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-heading">Creating Software & Digital Excellence</h1>
+                    <p class="hero-para">We transform businesses of most major sectors with powerful and adaptable digital solutions.</p>
+                    <button class="talk-us-button">
+                        <a href="#">Let's Talk With Us <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/right-part.png" alt="Digital Solutions" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="update-section">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4">
+                    <div class="update-item">
+                        <img src="assets/images/tel.svg" alt="Update Icon">
+                        <p>Developed With Highest Care. Always updated.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="update-item">
+                        <img src="assets/images/expert.svg" alt="Expert Icon">
+                        <p>Our Expert and Dedicated Team Members.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="update-item">
+                        <img src="assets/images/service.svg" alt="Service Icon">
+                        <p>24/7 Customer Support for client Satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h6 class="section-title">About Us</h6>
+                <h1 class="section-description">We help to accelerate your business growth</h1>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="assets/images/about-us.png" alt="About Us" class="about-image">
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content-block">
+                        <p class="section-description-2">We develop disruptive solutions for organisations. We've built a reputation for excellent clients satisfaction as evidenced by our service.</p>
+                        <p class="about-text">Seamlessly formulate exceptional "outside the box" thinking business e-commerce. Phosfluorescently engage end-to-end platforms before integrated functionalities. </p>
+                        <button class="talk-us-button">
+                            <a href="#">More About Us<img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title-3"> Services</h2>
+            <h2 class="section-description-3">Top notch digital services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-1.svg" alt="Web Development" class="service-icon">
+                        <h3 class="service-title">Theme Development & Customaization</h3>
+                        <p class="service-description">Creates tailored websites to reflect your brand and engage your audience effectively.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-2.svg" alt="Mobile App Development" class="service-icon">
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-3.svg" alt="UI/UX Design" class="service-icon">
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-4.svg" alt="Web Development" class="service-icon">
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-description">We create responsive and dynamic websites that help businesses grow and succeed in the digital world.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-5.svg" alt="Mobile App Development" class="service-icon">
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="assets/images/service/service-6.svg" alt="UI/UX Design" class="service-icon">
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
+                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
