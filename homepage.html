@@ -6,16 +6,23 @@
     <title>WeLab Homepage</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #007CF5;
             --text-dark: #1A1A1A;
             --text-gray: #626368;
+            --background-light: #F8F9FA;
+            --border-color: #C6C6C6;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
         .welab-logo img {
@@ -25,17 +32,24 @@
         
         .navbar {
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
+            padding: 1.25rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: white;
+            z-index: 1000;
         }
 
         .navbar-brand {
             font-size: 24px;
             font-weight: 600;
+            color: var(--text-dark);
         }
 
         .nav-link {
             color: var(--text-dark) !important;
             font-size: 16px;
+            font-weight: 500;
             transition: color 0.3s ease;
             padding: 0.5rem 1rem !important;
         }
@@ -51,6 +65,7 @@
             padding: 12px 24px;
             border-radius: 24px;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .btn-start-project:hover {
@@ -61,8 +76,21 @@
 
         /* Hero Section */
         .hero-section {
-            padding: 6rem 0;
+            padding: 8rem 0 6rem;
             background-color: #fff;
+        }
+
+        .hero-main-part {
+            gap: 130px;
+        }
+
+        .hero-section .first-half {
+            width: 570px;
+            height: 590px;
+        }
+        .hero-section .second-half {
+            width: 617px;
+            height: 636px;
         }
 
         .hero-heading {
@@ -71,6 +99,7 @@
             line-height: 1.1;
             margin-bottom: 1.5rem;
             color: var(--text-dark);
+            letter-spacing: -0.02em;
         }
 
         .hero-para {
@@ -103,11 +132,13 @@
             align-items: center;
             gap: 15px;
             font-weight: 500;
+            font-size: 16px;
         }
 
         .hero-image {
             max-width: 100%;
             height: auto;
+            object-fit: contain;
         }
 
         /* Update Section */
@@ -133,32 +164,13 @@
             color: white;
             margin: 0;
             font-size: 1.1rem;
-        }
-
-        @media (max-width: 991.98px) {
-            .update-section {
-                padding: 2rem 0;
-            }
-            
-            .update-item {
-                justify-content: center;
-                margin-bottom: 1.5rem;
-            }
-
-            .update-item:last-child {
-                margin-bottom: 0;
-            }
+            font-weight: 500;
         }
 
         /* About Section */
         .about-section {
             padding: 6rem 0;
-            background-color: #F8F9FA;
-        }
-
-        .about-section .row {
-            margin-left: 0;
-            margin-right: 0;
+            background-color: var(--background-light);
         }
 
         .about-content {
@@ -167,39 +179,39 @@
         }
 
         .section-title {
-            font-size: 1.0rem;
+            font-size: 1rem;
             font-weight: 700;
-            color: #8D8D8D;                   
+            color: #8D8D8D;
             margin-bottom: 1.5rem;
             margin-top: 0;
             text-align: start;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .section-description {
             font-size: 60px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 3rem;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .section-description-2 {
             font-size: 30px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             line-height: 1.2;
-        }
-
-        .about-content {
-            max-width: 66.666%;
+            letter-spacing: -0.01em;
         }
 
         .about-image {
             width: 100%;
             height: auto;
             object-fit: cover;
-            padding-right: 0;
+            border-radius: 8px;
         }
 
         .about-content-block {
@@ -218,93 +230,74 @@
             margin-bottom: 2rem;
         }
 
-        @media (max-width: 991.98px) {
-            .about-section .container {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-
-            .about-content {
-                max-width: 100%;
-                padding-left: 0;
-            }
-
-            .about-content-block {
-                padding-left: 0;
-                padding-right: 0;
-                margin-top: 2rem;
-            }
-        }
-
         /* Data Section */
         .data-section {
-            padding: 1.5rem 0;
-            background-color: #F8F9FA;
-            border: 1px solid #C6C6C6;
+            padding: 3rem 0;
+            background-color: var(--background-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
+
         .data-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .data-item {
             text-align: center;
             flex: 1;
         }
+
         .data-number {
             font-size: 60px;
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 1rem;
+            line-height: 1;
         }
+
         .data-text {
             font-size: 18px;
             color: var(--text-gray);
             line-height: 1.6;
-        }
-        @media (max-width: 991.98px) {
-            .data-row {
-                flex-direction: column;
-                align-items: center;
-            }
-            .data-item {
-                margin-bottom: 2rem;
-            }
-            .data-item:last-child {
-                margin-bottom: 0;
-            }
+            font-weight: 500;
         }
 
         /* Services Section */
         .services-section {
             padding: 6rem 0;
-            background-color: #F8F9FA;
+            background-color: var(--background-light);
         }
 
         .section-title-3 {
-            font-size: 1.0rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #8D8D8D;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
         .section-description-3 {
             font-size: 60px;
             font-weight: 700;
-            /* width: 300px; */
-            align-items: center;
-            color: black;
+            color: var(--text-dark);
             margin-bottom: 3rem;
             text-align: center;
+            letter-spacing: -0.02em;
         }
 
         .service-card {
-            border: 1px solid #C6C6C6;
+            border: 1px solid var(--border-color);
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             transition: all 0.3s ease;
             height: 100%;
+            border-radius: 8px;
         }
 
         .service-card:hover {
@@ -329,6 +322,16 @@
             color: var(--text-gray);
             font-size: 1rem;
             line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card p:last-child {
+            color: var(--primary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
         }
 
         .view-all-button {
@@ -336,78 +339,50 @@
             justify-content: center;
             margin-top: 3rem;
         }
+
         .btn-view-all {
-            background-color: white;
-            border: .5px solid black;
+            background-color: black;
+            border: 1px solid var(--text-dark);
             padding: 12px 24px;
             border-radius: 8px;
             transition: all 0.3s ease;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
         }
 
-        .btn-view-all a{
-            color: black !important;
+        .btn-view-all:hover {
+            background-color: var(--text-dark);
+            color: white;
+        }
+
+        .btn-view-all a {
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 600;
         }
 
-        .btn-view-all img{
-            color: #1A1A1A;
-        }
-
-        @media (max-width: 991.98px) {
-            .hero-heading {
-                font-size: 3rem;
-            }
-            
-            .hero-section {
-                text-align: center;
-            }
-
-            .hero-para {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-image {
-                margin-top: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-        /* Work Process section*/
-
-        .work-process-section {
-            margin: 100px;
-        }
-        .start-project-btn {
-            height: 50px;
-            background-color: var(--primary-color);
-            border: none;
-            padding: 16px 32px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .start-project-btn a {
-            gap: 10px;
-            text-decoration: none;
+        .btn-view-all:hover a {
             color: white;
+        }
+
+        /* Work Process Section */
+        .work-process-section {
+            padding: 6rem 0;
+            background-color: white;
         }
 
         .work-process-row {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
+            gap: 4rem;
+            align-items: center;
         }
+
         .word-process-left-part {
-            width: 50%;
-            padding: 100px;
-            padding-top: 0px;
-            position: relative;
+            flex: 1;
+            padding-right: 2rem;
         }
 
         .process-step {
@@ -453,37 +428,74 @@
         .process-step p {
             color: var(--text-gray);
             line-height: 1.6;
+            margin-bottom: 0;
         }
 
         .word-process-right-part {
-            width: 50%;
-            height: 500px;
+            flex: 1;
         }
 
-        /* Team section */
+        .word-process-right-part img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
+        .start-project-btn {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .start-project-btn a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        /* Team Section */
         .team-section {
             background-color: black;
-            /* width: 1600px; */
+            padding: 6rem 0;
         }
+
         .team-content {
-            padding: 10px;
+            padding: 0 1rem;
             color: white;
+            margin-bottom: 3rem;
         }
 
         .team-title {
             color: #8D8D8D;
-            font-size: 20px;
+            font-size: 1rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
         }
-        .team-content h1{
-            width: 300px;
+
+        .team-description {
+            font-size: 60px;
             font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        .meet-expert {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
 
         .view-all-members {
-            width:165px;
-            height: 50px;
             background-color: var(--primary-color);
             border: none;
             padding: 16px 32px;
@@ -491,80 +503,157 @@
             transition: all 0.3s ease;
         }
 
-        .meet-expert {
-            position: relative;
-        }
-
-        .view-all-members {
-            position: absolute;
-            right: -11px;
-            bottom: 0px;
-        }
-
         .view-all-members a {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             font-weight: 500;
         }
 
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
         .member-item {
-            width: 25%;
-            padding: 10px;
+            width: calc(25% - 1rem);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        /* story/testimonial section */
-        .testimonial-title {
-            margin-top: 50px;
-        }
-        .testimonial-card {
-            width: 33.33333%;
-            flex-wrap: nowrap;
-        }
-        /* .service-card-2 {
-
-        } */
-
-        /**/
-        .blog-section {
-            margin-top: 50px;
-            /* border: 1px solid #c9c9c9; */
-            padding-top: 30px;
-        }
-        .blog-content {
-            padding: 10px;
-            color:  black;
+        .member-item img {
             width: 100%;
+            height: auto;
+            object-fit: cover;
         }
-        .blog-content h1 {
-            width: 300px;
-            font-weight: 700;
+
+        /* Testimonial Section */
+        .story-section {
+            padding: 6rem 0;
+            background-color: white;
         }
-        .blog-content h6 {
-            width: 300px;
-            font-weight: 700;
+
+        .testimonial-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-card {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .service-card-2 {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .service-card-2 img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 6rem 0;
+            background-color: white;
+        }
+
+        .blog-content {
+            padding: 0 1rem;
+            margin-bottom: 3rem;
         }
 
         .blog-post {
-            /* justify-content: space-between; */
-            margin-top: 50px;
+            display: flex;
+            gap: 2rem;
         }
 
         .blog-item {
-            width: 50%;
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        /* Blue Section*/
-        .blue-section {
-            /* background-color: #007CF5; */
-            margin-top: 30px;
+        .blog-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
 
+        /* Blue Section */
+        /* .blue-section {
+            padding: 6rem 0;
+            background-color: var(--primary-color);
         }
 
         .blue-content {
-            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .blue-left h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .blue-right {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .email-written-section {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .email-written-section label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .email-written-section input {
+            width: 100%;
+            padding: 1rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 18px;
+        }
+
+        .email-written-section input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .blue-arrow {
+            position: absolute;
+            right: 0;
+            bottom: 1rem;
+            cursor: pointer;
+        } */
+
+        /* My One */
+
+        .blue-section {
+            margin-top: 30px;
+        }
+
+        .blue-content {
+            background-color:  var(--primary-color);
             width: 100%;
             height: 200px;
             display: flex;
@@ -587,303 +676,374 @@
             right: 938px;
             top: 12px;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 991.98px) {
+            .hero-heading {
+                font-size: 3rem;
+            }
+
+            .section-description,
+            .section-description-3,
+            .team-description {
+                font-size: 40px;
+            }
+
+            .work-process-row {
+                flex-direction: column;
+            }
+
+            .word-process-left-part,
+            .word-process-right-part {
+                width: 100%;
+                padding: 0;
+            }
+
+            .member-item {
+                width: calc(50% - 1rem);
+            }
+
+            .blue-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .blue-left h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .data-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .data-item {
+                width: 100%;
+            }
+
+            .testimonial-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .blog-post {
+                flex-direction: column;
+            }
+
+            .blog-item {
+                width: 100%;
+            }
+        }
+    .homepage-body {
+        width: 1600px;
+    }
+    .nav-container {
+        display: flex !important;
+        margin-top: 30px !important;
+    }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/images/welab.svg" alt="WeLabs Logo" class="me-2">
-                WeLabs
-            </a>
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="homepage.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-start-project" href="#">Start a project</a>
-                    </li>
-                </ul>
+    <div class="homepage-body">
+        <nav class="nav navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/images/welab.svg" alt="WeLabs Logo" class="me-2">
+                    WeLabs
+                </a>
+                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="homepage.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-start-project" href="#">Start a project</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="hero-heading">Creating Software & Digital Excellence</h1>
-                    <p class="hero-para">We transform businesses of most major sectors with powerful and adaptable digital solutions.</p>
-                    <button class="talk-us-button">
-                        <a href="#">Let's Talk With Us <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+        </nav>
+    
+        <section class="hero-section">
+            <div class="container">
+                <div class="row hero-main-part">
+                    <div class="col-lg-6 first-half">
+                        <h1 class="hero-heading">Creating Software & Digital Excellence</h1>
+                        <p class="hero-para">We transform businesses of most major sectors with powerful and adaptable digital solutions.</p>
+                        <button class="talk-us-button">
+                            <a href="#">Let's Talk With Us <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                        </button>
+                    </div>
+                    <div class="col-lg-6 second-half">
+                        <img src="assets/images/right-part.png" alt="Digital Solutions" class="hero-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="update-section">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-lg-4">
+                        <div class="update-item">
+                            <img src="assets/images/tel.svg" alt="Update Icon">
+                            <p>Developed With Highest Care. Always updated.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="update-item">
+                            <img src="assets/images/expert.svg" alt="Expert Icon">
+                            <p>Our Expert and Dedicated Team Members.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="update-item">
+                            <img src="assets/images/service.svg" alt="Service Icon">
+                            <p>24/7 Customer Support for client Satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h6 class="section-title">About Us</h6>
+                    <h1 class="section-description">We help to accelerate your business growth</h1>
+                </div>
+    
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img src="assets/images/about-us.png" alt="About Us" class="about-image">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content-block">
+                            <p class="section-description-2">We develop disruptive solutions for organisations. We've built a reputation for excellent clients satisfaction as evidenced by our service.</p>
+                            <p class="about-text">Seamlessly formulate exceptional "outside the box" thinking business e-commerce. Phosfluorescently engage end-to-end platforms before integrated functionalities. </p>
+                            <button class="talk-us-button">
+                                <a href="#">More About Us<img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="data-section">
+            <div class="container">
+               <div class="data-row">
+                    <div class="data-item">
+                        <h1 class="data-number">10+</h1>
+                        <p class="data-text">Years of Experience</p>
+                    </div> 
+                    <div class="data-item">
+                        <h1 class="data-number">230+</h1>
+                        <p class="data-text">Active Customers</p>
+                    </div>
+                    <div class="data-item">
+                        <h1 class="data-number">60+</h1>
+                        <p class="data-text">Team Members</p>
+                    </div>
+                    <div class="data-item">
+                        <h1 class="data-number">500+</h1>
+                        <p class="data-text">Company Trusted Us</p>
+                    </div>
+               </div>
+            </div>
+        </section>
+    
+        <section class="services-section">
+            <div class="container">
+                <h2 class="section-title-3"> Services</h2>
+                <h2 class="section-description-3">Top notch digital services</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-1.svg" alt="Web Development" class="service-icon">
+                            <h3 class="service-title">Theme Development & Customaization</h3>
+                            <p class="service-description">Creates tailored websites to reflect your brand and engage your audience effectively.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-2.svg" alt="Mobile App Development" class="service-icon">
+                            <h3 class="service-title">Mobile App Development</h3>
+                            <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-3.svg" alt="UI/UX Design" class="service-icon">
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-4.svg" alt="Web Development" class="service-icon">
+                            <h3 class="service-title">Web Development</h3>
+                            <p class="service-description">We create responsive and dynamic websites that help businesses grow and succeed in the digital world.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-5.svg" alt="Mobile App Development" class="service-icon">
+                            <h3 class="service-title">Mobile App Development</h3>
+                            <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <img src="assets/images/service/service-6.svg" alt="UI/UX Design" class="service-icon">
+                            <h3 class="service-title">UI/UX Design</h3>
+                            <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
+                            <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-button">
+                    <button class="btn btn-view-all">
+                        <a href="#">View All</a> <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
                     </button>
                 </div>
-                <div class="col-lg-6">
-                    <img src="assets/images/right-part.png" alt="Digital Solutions" class="hero-image">
+            </div>
+        </section>
+    
+        <section class="work-process-section">
+            <div class="container">
+                <h2 class="section-title-3"> Work Process</h2>
+                <h2 class="section-description-3">How We works</h2>
+                <div class="row g-4 work-process-row">
+                   <div class="word-process-left-part">
+                        <div class="" style="">
+                            <div class="process-step" data-step="1">
+                                <h5>Submit a proposal for your awesome project</h5>
+                                <p>Get your thoughts to paper faster with our step-by-step AI copywriter. Get your thoughts to paper faster with our step-by-step AI copywriter. </p>
+                                <p>Get Started -> </p>
+                            </div>
+                            <div class="process-step" data-step="2">
+                               <h5>Our Expert developer team is ready to do all.</h5>
+                            </div>
+                            <div class="process-step" data-step="3">
+                                <h5>Get full support from us through the project.</h5>
+                            </div>
+                        </div>
+    
+                        <button class="start-project-btn">
+                            <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                        </button>
+                   </div>
+                   <div class="word-process-right-part">
+                    <img src="assets/images/Rectangle.png" alt="">
+                   </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="update-section">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-4">
-                    <div class="update-item">
-                        <img src="assets/images/tel.svg" alt="Update Icon">
-                        <p>Developed With Highest Care. Always updated.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="update-item">
-                        <img src="assets/images/expert.svg" alt="Expert Icon">
-                        <p>Our Expert and Dedicated Team Members.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="update-item">
-                        <img src="assets/images/service.svg" alt="Service Icon">
-                        <p>24/7 Customer Support for client Satisfaction.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <h6 class="section-title">About Us</h6>
-                <h1 class="section-description">We help to accelerate your business growth</h1>
-            </div>
-
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <img src="assets/images/about-us.png" alt="About Us" class="about-image">
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-content-block">
-                        <p class="section-description-2">We develop disruptive solutions for organisations. We've built a reputation for excellent clients satisfaction as evidenced by our service.</p>
-                        <p class="about-text">Seamlessly formulate exceptional "outside the box" thinking business e-commerce. Phosfluorescently engage end-to-end platforms before integrated functionalities. </p>
-                        <button class="talk-us-button">
-                            <a href="#">More About Us<img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+        </section>
+    
+        <section class="team-section">
+            <div class="container team-container">
+                <div class="team-content">
+                    <h6 class="team-title">Team Member</h6>
+                    <div class="meet-expert">
+                        <h1 class="team-description">Meet our expert team</h1>
+                        <button class="view-all-members">
+                            <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
                         </button>
                     </div>
                 </div>
+                <div class="row team-members">
+                    <img src="assets/team/team-1.png" alt="" class="member-item">
+                    <img src="assets/team/team-2.png" alt="" class="member-item">
+                    <img src="assets/team/team-3.png" alt="" class="member-item">
+                    <img src="assets/team/team-4.png" alt="" class="member-item">
+                    <img src="assets/team/team-5.png" alt="" class="member-item">
+                    <img src="assets/team/team-6.png" alt="" class="member-item">
+                    <img src="assets/team/team-7.png" alt="" class="member-item">
+                    <img src="assets/team/team-8.png" alt="" class="member-item">
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="data-section">
-        <div class="container">
-           <div class="data-row">
-                <div class="data-item">
-                    <h1 class="data-number">10+</h1>
-                    <p class="data-text">Years of Experience</p>
-                </div> 
-                <div class="data-item">
-                    <h1 class="data-number">230+</h1>
-                    <p class="data-text">Active Customers</p>
-                </div>
-                <div class="data-item">
-                    <h1 class="data-number">60+</h1>
-                    <p class="data-text">Team Members</p>
-                </div>
-                <div class="data-item">
-                    <h1 class="data-number">500+</h1>
-                    <p class="data-text">Company Trusted Us</p>
-                </div>
-           </div>
-        </div>
-    </section>
-
-    <section class="services-section">
-        <div class="container">
-            <h2 class="section-title-3"> Services</h2>
-            <h2 class="section-description-3">Top notch digital services</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-1.svg" alt="Web Development" class="service-icon">
-                        <h3 class="service-title">Theme Development & Customaization</h3>
-                        <p class="service-description">Creates tailored websites to reflect your brand and engage your audience effectively.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+        </section>
+    
+        <section class="story-section">
+            <div class="container">
+                <h2 class="section-title-3 testimonial-title"> Testimonial</h2>
+                <h2 class="section-description-3">Our Client Stories</h2>
+                <div class="row g-4 testimonial-card">
+                    <div class="service-card-2">
+                        <img src="assets/images/Testimonial 1.png" alt="Web Development" class="">
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-2.svg" alt="Mobile App Development" class="service-icon">
-                        <h3 class="service-title">Mobile App Development</h3>
-                        <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    <div class="service-card-2">
+                        <img src="assets/images/Testimonial-2.png" alt="Web Development" class="">
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-3.svg" alt="UI/UX Design" class="service-icon">
-                        <h3 class="service-title">UI/UX Design</h3>
-                        <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-4.svg" alt="Web Development" class="service-icon">
-                        <h3 class="service-title">Web Development</h3>
-                        <p class="service-description">We create responsive and dynamic websites that help businesses grow and succeed in the digital world.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-5.svg" alt="Mobile App Development" class="service-icon">
-                        <h3 class="service-title">Mobile App Development</h3>
-                        <p class="service-description">Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <img src="assets/images/service/service-6.svg" alt="UI/UX Design" class="service-icon">
-                        <h3 class="service-title">UI/UX Design</h3>
-                        <p class="service-description">User-centered design solutions that enhance user experience and drive engagement.</p>
-                        <p>Learn More <img src="assets/images/arrow-right.svg" alt=""></p>
+                    <div class="service-card-2">
+                        <img src="assets/images/Testimonial 3.png" alt="Web Development" class="">
                     </div>
                 </div>
             </div>
-            <div class="view-all-button">
-                <button class="btn btn-view-all">
-                    <a href="#">View All</a> <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="work-process-section">
-        <div class="container">
-            <h2 class="section-title-3"> Work Process</h2>
-            <h2 class="section-description-3">How We works</h2>
-            <div class="row g-4 work-process-row">
-               <div class="word-process-left-part">
-                    <div class="process-step" data-step="1">
-                        <h5>Submit a proposal for your awesome project</h5>
-                        <p>Get your thoughts to paper faster with our step-by-step AI copywriter. Get your thoughts to paper faster with our step-by-step AI copywriter. </p>
-                        <p>Get Started -> </p>
+        </section>
+    
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-content">
+                    <h6 class="team-title">Blog</h6>
+                    <div class="meet-expert">
+                        <h1 class="team-description">Our Latest Articles</Article></h1>
+                        <button class="view-all-members">
+                            <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
+                        </button>
                     </div>
-                    <div class="process-step" data-step="2">
-                       <h5>Our Expert developer team is ready to do all.</h5>
+                </div>
+                <div class="row blog-post">
+                    <img src="assets/images/blog/blog-1.png"" alt="" class="blog-item">
+                    <img src="assets/images/blog/blog-2.png"" alt="" class="blog-item">
+                </div>
+            </div>
+        </section>
+    
+        <section class="blue-section">
+            <div class="container">
+                <div class="row blue-content">
+                    <div class="blue-left">
+                        <h1>Got A Project? Let's Talk. Hi,</h1>
                     </div>
-                    <div class="process-step" data-step="3">
-                        <h5>Get full support from us through the project.</h5>
+                    <div class="blue-right">
+                        <div class="email-written-section">
+                            <label for="">Enter your Email</label>
+                            <img src="assets/images/up-arrow.svg" alt="" class="blue-arrow">
+                        </div>
+                        <div>_____________________________</div>
                     </div>
-
-                    <button class="start-project-btn">
-                        <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
-                    </button>
-
-               </div>
-               <div class="word-process-right-part">
-                <img src="assets/images/Rectangle.png" alt="">
-               </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team-section">
-        <div class="container team-container">
-            <div class="team-content">
-                <h6 class="team-title">Team Member</h6>
-                <div class="meet-expert">
-                    <h1 class="team-description">Meet our expert team</h1>
-                    <button class="view-all-members">
-                        <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
-                    </button>
                 </div>
             </div>
-            <div class="row team-members">
-                <img src="assets/team/team-1.png" alt="" class="member-item">
-                <img src="assets/team/team-2.png" alt="" class="member-item">
-                <img src="assets/team/team-3.png" alt="" class="member-item">
-                <img src="assets/team/team-4.png" alt="" class="member-item">
-                <img src="assets/team/team-5.png" alt="" class="member-item">
-                <img src="assets/team/team-6.png" alt="" class="member-item">
-                <img src="assets/team/team-7.png" alt="" class="member-item">
-                <img src="assets/team/team-8.png" alt="" class="member-item">
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section">
-        <div class="container">
-            <h2 class="section-title-3 testimonial-title"> Testimonial</h2>
-            <h2 class="section-description-3">Our Client Stories</h2>
-            <div class="row g-4 testimonial-card">
-                <div class="service-card-2">
-                    <img src="assets/images/Testimonial 1.png" alt="Web Development" class="">
-                </div>
-                <div class="service-card-2">
-                    <img src="assets/images/Testimonial-2.png" alt="Web Development" class="">
-                </div>
-                <div class="service-card-2">
-                    <img src="assets/images/Testimonial 3.png" alt="Web Development" class="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="blog-section">
-        <div class="container">
-            <div class="blog-content">
-                <h6 class="team-title">Blog</h6>
-                <div class="meet-expert">
-                    <h1 class="team-description">Our Latest Articles</Article></h1>
-                    <button class="view-all-members">
-                        <a href="#">View All <img src="assets/images/up-arrow.svg" alt="Arrow"></a>
-                    </button>
-                </div>
-            </div>
-            <div class="row blog-post">
-                <img src="assets/images/blog/blog-1.png"" alt="" class="blog-item">
-                <img src="assets/images/blog/blog-2.png"" alt="" class="blog-item">
-            </div>
-        </div>
-    </section>
-
-    <section class="blue-section">
-        <div class="container">
-            <div class="row blue-content">
-                <div class="blue-left">
-                    <h1>Got A Project? Let's Talk. Hi,</h1>
-                </div>
-                <div class="blue-right">
-                    <div class="email-written-section">
-                        <label for="">Enter your Email</label>
-                        <img src="assets/images/up-arrow.svg" alt="" class="blue-arrow">
-                    </div>
-                    <div>_______________________________________________</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
