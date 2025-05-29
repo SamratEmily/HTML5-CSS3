@@ -519,15 +519,32 @@
 
         .team-members {
             display: flex;
+            flex-direction: row;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
             justify-content: center;
+            /* width: 270px;
+            height: 340px; */
         }
 
         .member-item {
-            width: calc(25% - 1rem);
+            width: calc(25% - 1.5rem);
             border-radius: 8px;
             overflow: hidden;
+        }
+
+        .member-profile{
+            display: flex;
+            position: relative;
+            /* align-items: center; */
+            color: white;
+        }
+        .member-profile .image-profile {
+            position: absolute;
+            top: 28px;
+        }
+        .member-profile .member-name{
+            padding: 20px;
         }
 
         .member-item img {
@@ -1022,15 +1039,87 @@
                     </button>
                 </div>
             </div>
-            <div class="row team-members">
-                <img src="assets/team/team-1.png" alt="" class="member-item">
-                <img src="assets/team/team-2.png" alt="" class="member-item">
-                <img src="assets/team/team-3.png" alt="" class="member-item">
-                <img src="assets/team/team-4.png" alt="" class="member-item">
-                <img src="assets/team/team-5.png" alt="" class="member-item">
-                <img src="assets/team/team-6.png" alt="" class="member-item">
-                <img src="assets/team/team-7.png" alt="" class="member-item">
-                <img src="assets/team/team-8.png" alt="" class="member-item">
+            <div class="team-members">
+                <div>
+                    <img src="assets/team/member-1.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-2.png" alt=" class="team-item"">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-3.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-4.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-5.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-6.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-7.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/team/member-8.png" alt="" class="team-item">
+                    <div class="member-profile">
+                        <img src="assets/images/up-arrow.svg" alt="" class="image-profile">
+                        <div class="member-name">
+                            <h4>Jacob McDony</h4>
+                            <p>CEO of Rackspace</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
