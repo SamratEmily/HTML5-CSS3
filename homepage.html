@@ -912,142 +912,14 @@
 
 
         /* Responsive Styles */
-        @media (max-width: 991.98px) {
-            .hero-heading {
-                font-size: 3rem;
-            }
-
-            .section-description,
-            .section-description-3,
-            .team-description {
-                font-size: 40px;
-            }
-
-            .work-process-row {
-                flex-direction: column;
-            }
-
-            .word-process-left-part,
-            .word-process-right-part {
-                width: 100%;
-                padding: 0;
-            }
-
-            .member-item {
-                width: calc(50% - 1rem);
-            }
-
-            .blue-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .blue-left h1 {
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .data-row {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .data-item {
-                width: 100%;
-            }
-
-            .testimonial-card {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .blog-post {
-                flex-direction: column;
-            }
-
-            .blog-item {
-                width: 100%;
-            }
-        }
-        @media (max-width: 991.98px) {
-            .hero-heading {
-                font-size: 3rem;
-            }
-
-            .section-description,
-            .section-description-3,
-            .team-description {
-                font-size: 40px;
-            }
-
-            .work-process-row {
-                flex-direction: column;
-            }
-
-            .word-process-left-part,
-            .word-process-right-part {
-                width: 100%;
-                padding: 0;
-            }
-
-            .member-item {
-                width: calc(50% - 1rem);
-            }
-
-            .blue-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 2rem;
-            }
-
-            .blue-left h1 {
-                font-size: 36px;
-            }
-        }
-
-        @media (max-width: 991.98px) {
-            .container,
-            .nav-section {
-                width: 100%;
-                max-width: 100%;
-                padding: 0 10px;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            .data-row {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .data-item {
-                width: 100%;
-            }
-
-            .testimonial-card {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .blog-post {
-                flex-direction: column;
-            }
-
-            .blog-item {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 678px) {
+        @media (max-width: 768px) {
             body {
                 width: 100vw;
                 min-width: 0;
                 margin: 0;
                 padding: 0;
-                overflow-x: hidden;
-                overflow-wrap: break-word;
+                overflow-x: hidden !important;
+                overflow-wrap: break-word !important;
             }
             .container,
             .nav-section,
@@ -1067,13 +939,182 @@
                 padding-right: 10px !important;
                 padding-top: 20px !important;
                 padding-bottom: 20px !important;
+                overflow-x: hidden !important;
+                overflow-wrap: break-word !important;
             }
+            /* Navbar Drawer Styles */
             .navbar-collapse {
-                width: 100vw;
-                max-width: 100vw;
-                padding: 80px 10px 30px;
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                width: 80vw;
+                max-width: 350px;
+                height: 100vh;
+                background: #fff;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                z-index: 1000;
+                overflow-y: auto;
+                transition: right 0.3s cubic-bezier(.4,0,.2,1);
+                padding: 80px 20px 30px;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
             }
-        }
+            .navbar-collapse.show {
+                right: 0;
+            }
+            .navbar-nav {
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+            }
+            .nav-item {
+                width: 100%;
+            }
+            .nav-link, .btn-start-project {
+                display: block;
+                width: 100%;
+                text-align: left;
+                font-size: 18px;
+                padding: 12px 0;
+            }
+            .btn-start-project {
+                margin-top: 20px;
+                text-align: center;
+            }
+            /* Hero section: reverse order on mobile */
+            .hero-main-part {
+                display: flex !important;
+                flex-direction: column-reverse !important;
+            }
+
+            .hero-section .second-half {
+                height: inherit !important;
+            }
+            .hero-main-part {
+                gap: 50px !important;
+            }
+
+            .hero-section .first-half {
+                width: 100% !important;
+                height: inherit !important;
+            }
+
+            .hero-section .hero-heading {
+                font-size: 30px !important;
+                font-weight: 800 !important;
+                line-height: 35px !important;
+                text-align: center !important;
+                margin-top: 0;
+                margin-bottom: 10px;
+                padding: 0 40px !important;
+            }
+
+            .hero-section .hero-para {
+                font-size: 16px !important;
+                text-align: center !important;
+                /* margin-top: 20px !important;
+                margin-bottom: 20px !important; */
+                padding: 0 20px !important;
+            }
+
+            .hero-section .talk-us-button {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin: 40px auto !important;
+                text-align: center !important;
+                float: none !important;
+            }
+
+            .hero-section .hero-image {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .data-row {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .data-item {
+                width: 100%;
+            }
+            .testimonial-card {
+                flex-direction: column;
+                align-items: center;
+            }
+            .blog-post {
+                flex-direction: column;
+            }
+            .blog-item {
+                width: 100%;
+            }
+            .drawer-close {
+                position: absolute;
+                top: 18px;
+                right: 18px;
+                background: none;
+                border: none;
+                padding: 4px;
+                z-index: 1100;
+                cursor: pointer;
+                display: block;
+            }
+            .drawer-close svg {
+                display: block;
+            }
+
+            /* About Section */
+            .about-content {
+                max-width: 100% !important;
+                padding-left: 0 !important;
+            }
+
+            .about-content-block {
+                width: 100% !important;
+            }
+
+            .section-description {
+                font-size: 30px !important;
+                font-weight: 700 !important;
+                /* line-height: 35px !important; */
+                /* text-align: center !important; */
+                margin-top: 0 !important;
+            }
+
+            .about-content-block {
+                width: 100% !important;
+                height: auto !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-top: 50px !important;
+            }
+
+            .section-description-2 {
+                font-size: 20px !important;
+                font-weight: 700;
+                line-height: 28px;
+                margin-bottom: 0px;
+            }
+
+            .section-description-3 {
+                font-size: 30px !important;
+                font-weight: 700 !important;
+                line-height: 35px !important;
+                text-align: center !important;
+                margin-top: 0px !important;
+                /* margin-bottom: 0 !important; */
+            }
+
+            .work-process-row {
+                flex-direction: column;
+            }
+
+            .word-process-left-part {
+                width: 100% !important;
+            }
+            
+        } 
     </style>
 </head>
 <body>
@@ -1083,7 +1124,20 @@
                 <img src="assets/images/welab.svg" alt="WeLabs Logo" class="me-2">
                 WeLabs
             </a>
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation" style="background:none;border:none;padding:0;margin-left:auto;display:block;">
+                <svg class="ct-icon" width="18" height="14" viewBox="0 0 18 14" aria-hidden="true" data-type="type-1">
+                    <rect y="0.00" width="18" height="1.7" rx="1"></rect>
+                    <rect y="6.15" width="18" height="1.7" rx="1"></rect>
+                    <rect y="12.3" width="18" height="1.7" rx="1"></rect>
+                </svg>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <button class="drawer-close" aria-label="Close navigation" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4.3934" y1="4.3934" x2="15.6066" y2="15.6066" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="15.6066" y1="4.3934" x2="4.3934" y2="15.6066" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="homepage.html">Home</a>
@@ -1283,11 +1337,12 @@
             </div>
         </div>
     </section>
+    
     <section class="work-process-section">
         <div class="container">
             <h2 class="section-title-3">Work Process</h2>
             <h2 class="section-description-3">How We works</h2>
-            <div class="row g-4 work-process-row">
+            <div class="g-4 work-process-row">
                 <div class="word-process-left-part">
                     <div class="">
                         <div class="process-step" data-step="1">
@@ -1586,5 +1641,37 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggler = document.querySelector('.navbar-toggler');
+        const drawer = document.querySelector('.navbar-collapse');
+        const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+        const closeBtn = document.querySelector('.drawer-close');
+
+        toggler.addEventListener('click', function(e) {
+            e.stopPropagation();
+            drawer.classList.toggle('show');
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                drawer.classList.remove('show');
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                drawer.classList.remove('show');
+            });
+        });
+
+        // Optional: close drawer when clicking outside
+        document.addEventListener('click', function(e) {
+            if (drawer.classList.contains('show') && !drawer.contains(e.target) && !toggler.contains(e.target)) {
+                drawer.classList.remove('show');
+            }
+        });
+    });
+    </script>
 </body>
 </html>
